@@ -13,6 +13,14 @@ class Snake:
         for x in range(0, 3):
             self.add_segment((-x * 20, 0))
 
+    def reset(self):
+        for segments in self.snake:
+            segments.color("black")
+        self.snake.clear()
+        for x in range (0,3):
+            self.add_segment((-x * 20, 0))
+
+
     def add_segment(self, position):
         new_seg = Turtle("square")
         new_seg.color("white")
