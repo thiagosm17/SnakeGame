@@ -11,7 +11,6 @@ screen.title("My Snake Game")
 screen.tracer(0)
 screen.listen()
 
-high_score = open("HighScore.txt")
 
 
 snake = Snake()
@@ -29,9 +28,6 @@ while game_on:
     time.sleep(0.15)
     snake.move()
 
-
-
-
     if snake.snake[0].distance(food) < 15:
         food.ramdomizer()
         snake.extend()
@@ -47,7 +43,5 @@ while game_on:
         if snake.snake[0].distance(segs) < 10:
             snake.reset()
             scoreboard.reset()
-
-high_score.close()
 
 screen.exitonclick()
